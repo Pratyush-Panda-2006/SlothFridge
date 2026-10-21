@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleepy Audio Studio — SlothFridge</title>
+  <meta name="description" content="Hands-free, slow, deadpan kitchen audio walkthrough powered by ElevenLabs streaming and George's voice.">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== NAVBAR (MATCHING REFERENCE IMAGE) ==================== -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-text">SLOTHFIDGE<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">THE COUCH ENGINE</a>
+        <a href="thesis.html" class="nav-link">THE THESIS</a>
+        <a href="recipes.html" class="nav-link">RECIPE ENGINE</a>
+        <a href="sink-debt.html" class="nav-link">SINK DEBT</a>
+        <a href="audio.html" class="nav-link active">SLEEPY AUDIO</a>
+      </nav>
+
+      <a href="index.html#ingestion" class="nav-cta-btn">JOIN THE LINE</a>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <div class="page-header-block">
+      <span class="page-kicker">// SECTION 05: ELEVENLABS KITCHEN AUDIO STUDIO</span>
+      <h1 class="page-headline">
+        Shut your eyes. Let <span class="sloth-punchline">ElevenLabs do the talking.</span>
+      </h1>
+      <p class="page-subhead">
+        Hands-free, slow, deadpan audio narration powered by ElevenLabs turbo streaming. George instructs you to fling food into the heat and return horizontally to your mattress until it smells ready.
+      </p>
+    </div>
+
+    <div class="audio-card-wrapper">
+      <div class="audio-left">
+        <h2 class="audio-headline">
+          The Couch Monologue Player
+        </h2>
+        <p class="audio-desc">
+          No screen-glaring, no scrolling with buttery fingers. Put your phone on the bedside table, hit stream, and let the voice guide your minimal forearm rotation.
+        </p>
+
+        <div class="audio-controls-block">
+          <button type="button" id="btn-play-audio" class="btn btn-primary btn-audio">
+            <span id="audio-btn-icon">▶</span>
+            <span id="audio-btn-text">STREAM SLEEPY AUDIO WALKTHROUGH</span>
+          </button>
+          <span id="audio-status-pill" class="audio-status">STANDBY</span>
+        </div>
+
+        <!-- Waveform Simulation / Audio Timeline -->
+        <div class="audio-visualizer" id="audio-visualizer" aria-hidden="true">
+          <span class="v-bar"></span><span class="v-bar"></span><span class="v-bar"></span>
+          <span class="v-bar"></span><span class="v-bar"></span><span class="v-bar"></span>
+          <span class="v-bar"></span><span class="v-bar"></span><span class="v-bar"></span>
+          <span class="v-bar"></span><span class="v-bar"></span><span class="v-bar"></span>
+          <span class="v-bar"></span><span class="v-bar"></span><span class="v-bar"></span>
+          <span class="v-bar"></span><span class="v-bar"></span><span class="v-bar"></span>
+        </div>
+
+        <div style="margin-top: 32px; border-top: 1px solid var(--hairline); padding-top: 20px;">
+          <label class="form-label">CUSTOM LAZY SCRIPT (OPTIONAL):</label>
+          <textarea
+            id="custom-audio-script-input"
+            class="hairline-input"
+            rows="3"
+            style="width: 100%; resize: vertical; margin-bottom: 12px; font-size: 11px;"
+            placeholder="Type your own sleepy instructions or click stream to hear the default recipe..."
+          ></textarea>
+          <button type="button" id="btn-stream-custom" class="btn-badge">
+            [USE CUSTOM SCRIPT]
+          </button>
+        </div>
+      </div>
+
+      <div class="audio-right">
+        <div class="transcript-box">
+          <span class="transcript-label">VERBATIM DEADPAN SCRIPT // VOICE: GEORGE</span>
+          <blockquote id="display-audio-script" class="transcript-text">
+            "Tear the bread with your bare hands and drop it in the pan. Crack the eggs right on top and let heat do the work. Go lie down flat on your bed for five minutes. Come back when it crackles, and eat straight from the skillet."
+          </blockquote>
+          <div class="transcript-footnote">
+            ELEVENLABS TURBO V2.5 · MODEL ID: ELEVEN_TURBO_V2_5 · GEORGE (VOICE ID: JBFQNCBSD6RMKJVDRZZB)
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="footer-hairline-strip">
+      <div class="footer-left">
+        SLOTHFIDGE · HACKTOBERFEST WEEK 3: SLOW & STEADY · 2026
+      </div>
+      <div class="footer-right">
+        OPEN STACK: TABPFN 3.5 + GEMMA 2 + ELEVENLABS + FASTAPI
+      </div>
+    </div>
+
+    <div class="footer-wordmark-wrapper" aria-hidden="true">
+      <div class="footer-wordmark">
+        <span>S</span><span>L</span><span>O</span><span>T</span><span>H</span><span>F</span><span>R</span><span>I</span><span>D</span><span>G</span><span>E</span>
+      </div>
+    </div>
+  </footer>
+
+  <audio id="sloth-audio-player" preload="none"></audio>
+  <script src="app.js"></script>
+</body>
+</html>

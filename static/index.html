@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SlothFridge — The Couch Potato Culinary Copilot</title>
+  <meta name="description" content="An uncompromisingly lazy 1-pan or microwave culinary engine powered by TabPFN fatigue predictions, Gemma 2 recipe synthesis, and ElevenLabs sleepy audio.">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== 1. NAVBAR (MATCHING REFERENCE IMAGE) ==================== -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-text">SLOTHFIDGE<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">THE COUCH ENGINE</a>
+        <a href="thesis.html" class="nav-link">THE THESIS</a>
+        <a href="recipes.html" class="nav-link">RECIPE ENGINE</a>
+        <a href="sink-debt.html" class="nav-link">SINK DEBT</a>
+        <a href="audio.html" class="nav-link">SLEEPY AUDIO</a>
+      </nav>
+
+      <!-- Prominent dark rectangular block CTA matching reference image -->
+      <a href="#ingestion" class="nav-cta-btn">JOIN THE LINE</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 2. HERO SECTION WITH IMPRESSIVE SLOTH FRIDGE HERO ==================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-main-grid">
+        <div class="hero-content">
+          <div class="hero-kicker">[ Nº 3 · HACKTOBERFEST SLOW & STEADY · ZERO-EFFORT CUISINE ]</div>
+
+          <h1 class="hero-headline">
+            Dinner for people who are <span class="sloth-punchline">too tired to stand up.</span>
+          </h1>
+
+          <p class="hero-lede">
+            Random dying vegetables, cold eggs, and stale bread synthesized into uncompromisingly lazy 1-pan or microwave calories. Zero chopping boards. Zero vertical posture past 4 minutes. Eat straight from the iron vessel so you never look at the sink again.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#ingestion" class="btn btn-primary" id="btn-hero-ingest">INITIALIZE COUCH INGESTION</a>
+            <a href="thesis.html" class="btn-hairline">READ THE THESIS →</a>
+          </div>
+        </div>
+
+        <!-- Impressive Sloth Fridge Mascot Display -->
+        <div class="hero-visual-card">
+          <div class="hero-image-frame">
+            <img
+              src="assets/sloth_fridge_hero.jpg"
+              alt="Sloth Chef Resting on Vintage Refrigerator"
+              class="hero-mascot-img"
+              loading="eager"
+            />
+          </div>
+          <div class="hero-image-caption">
+            <span>PLATE 01.1 // COUCH MASCOT AT MAXIMUM REST</span>
+            <span class="caption-tag">● TABPFN CALIBRATED</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Bottom Telemetry Strip -->
+      <div class="hero-telemetry-strip">
+        <div class="telemetry-cell">
+          <span class="telemetry-label">EFFORT TARGET</span>
+          <span class="telemetry-value">1 SKILLET / MUG</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">MAX SINK DISHES</span>
+          <span class="telemetry-value">1 UTENSIL</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">STANDING LIMIT</span>
+          <span class="telemetry-value">4.2 MINS MAX</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">BED RETURN TIME</span>
+          <span class="telemetry-value">IMMEDIATE (IDLE HEAT)</span>
+        </div>
+      </div>
+
+      <!-- Massive Cropped Spread Wordmark -->
+      <div class="hero-wordmark-wrapper" aria-hidden="true">
+        <div class="hero-wordmark" id="hero-wordmark">
+          <span>S</span><span>L</span><span>O</span><span>T</span><span>H</span><span>F</span><span>R</span><span>I</span><span>D</span><span>G</span><span>E</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. SECTION 02: THE 8:00 PM FRIDGE INGESTION ==================== -->
+    <section id="ingestion" class="ingestion-section section-boundary">
+      <div class="section-header-block">
+        <span class="section-idx">MODULE 02</span>
+        <span class="section-tagline">// THE 8:00 PM FRIDGE INGESTION & SLOTH ENGINE</span>
+      </div>
+
+      <div class="ingestion-grid">
+        <!-- Left: Form Controls -->
+        <div class="ingestion-form-col">
+          <h2 class="column-heading">
+            Toss whatever is dying in your vegetable drawer.
+          </h2>
+          <p class="column-desc">
+            Enter expired groceries. SlothFridge feeds the vector directly into TabPFN's prior-data fitted engine to predict your standing time and utensil penalty.
+          </p>
+
+          <form id="sloth-form" onsubmit="event.preventDefault(); window.triggerSlothSynthesis();">
+            <!-- Ingredients Input -->
+            <div class="form-group">
+              <label for="ingredients-input" class="form-label">
+                WHAT IS ROTTING IN YOUR FRIDGE?
+              </label>
+              <input
+                type="text"
+                id="ingredients-input"
+                name="ingredients"
+                class="hairline-input"
+                value="2 eggs, stale bread, curd, cheese slice"
+                placeholder="e.g. 2 eggs, stale bread, curd, cheese slice"
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <!-- Quick-select Badges -->
+            <div class="badges-group" aria-label="Quick Ingredients">
+              <span class="badge-label">QUICK ADD:</span>
+              <button type="button" class="btn-badge" data-item="2 eggs">[+ 2 EGGS]</button>
+              <button type="button" class="btn-badge" data-item="stale bread">[+ STALE BREAD]</button>
+              <button type="button" class="btn-badge" data-item="curd / dahi">[+ CURD / DAHI]</button>
+              <button type="button" class="btn-badge" data-item="cheese slice">[+ CHEESE]</button>
+              <button type="button" class="btn-badge" data-item="leftover rice">[+ LEFTOVER RICE]</button>
+              <button type="button" class="btn-badge" data-item="instant noodles">[+ NOODLES]</button>
+            </div>
+
+            <!-- Heat Source Toggle -->
+            <div class="form-group">
+              <label class="form-label">HEAT SOURCE VESSEL</label>
+              <div class="toggle-group" role="radiogroup" aria-label="Heat Source">
+                <button type="button" class="btn-toggle" data-val="microwave" aria-pressed="false">[MICROWAVE / MUG]</button>
+                <button type="button" class="btn-toggle active" data-val="skillet" aria-pressed="true">[1 SKILLET]</button>
+                <button type="button" class="btn-toggle" data-val="stove" aria-pressed="false">[TOASTER OVEN / POT]</button>
+              </div>
+            </div>
+
+            <!-- Sloth Level Slider / Toggle -->
+            <div class="form-group">
+              <label class="form-label">COUCH POTATO COMMITMENT LEVEL</label>
+              <div class="sloth-level-group" role="radiogroup" aria-label="Sloth Level">
+                <button type="button" class="btn-level" data-level="1" aria-pressed="false">
+                  <span class="level-num">L1</span>
+                  <span class="level-txt">MINIMAL EFFORT</span>
+                </button>
+                <button type="button" class="btn-level active" data-level="2" aria-pressed="true">
+                  <span class="level-num">L2</span>
+                  <span class="level-txt">1-PAN SLUMP</span>
+                </button>
+                <button type="button" class="btn-level" data-level="3" aria-pressed="false">
+                  <span class="level-num">L3</span>
+                  <span class="level-txt">COUCH COMATOSE</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Submit Action -->
+            <div class="form-action">
+              <button type="submit" id="btn-synthesize" class="btn btn-primary btn-block">
+                COMPUTE TABPFN FATIGUE & SYNTHESIZE
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Telemetry Panel -->
+        <div class="ingestion-telemetry-col">
+          <div class="telemetry-card">
+            <div class="card-header">
+              <span class="card-title">TABPFN TELEMETRY MATRIX</span>
+              <span id="telemetry-live-badge" class="badge-accent">MODEL SYNCED</span>
+            </div>
+
+            <div class="metric-block primary-metric">
+              <span class="metric-label">PREDICTED ACTIVE STANDING</span>
+              <div class="metric-value-row">
+                <span id="metric-standing-mins" class="metric-large">6.5</span>
+                <span class="metric-unit">MINUTES</span>
+              </div>
+              <span class="metric-sub">TabPFN continuous regression inference</span>
+            </div>
+
+            <div class="metric-grid-2">
+              <div class="metric-block">
+                <span class="metric-label">CLEANUP FATIGUE TIER</span>
+                <span id="metric-fatigue-tier" class="metric-medium">Low Effort (1 Pan)</span>
+              </div>
+              <div class="metric-block">
+                <span class="metric-label">SINK DEBT PENALTY</span>
+                <span id="metric-sink-dishes" class="metric-medium">2 Utensils (Spares plate)</span>
+              </div>
+            </div>
+
+            <!-- Sloth Approval Score -->
+            <div class="metric-block">
+              <div class="metric-row-space">
+                <span class="metric-label">SLOTH APPROVAL SCORE</span>
+                <span id="metric-sloth-score" class="metric-bold sloth-blue-text">68 / 100</span>
+              </div>
+              <div class="hairline-progress-bar">
+                <div id="sloth-score-fill" class="progress-fill" style="width: 68%;"></div>
+              </div>
+            </div>
+
+            <!-- TabPFN Posterior Probability Matrix -->
+            <div class="probabilities-block">
+              <span class="metric-label">TABPFN POSTERIOR CLASS PROBABILITIES</span>
+              
+              <div class="prob-row">
+                <span class="prob-name">Zero Effort (Mug)</span>
+                <div class="prob-bar-track">
+                  <div id="prob-bar-zero" class="prob-bar-fill" style="width: 0%;"></div>
+                </div>
+                <span id="prob-val-zero" class="prob-num">0.0%</span>
+              </div>
+
+              <div class="prob-row">
+                <span class="prob-name">Low Effort (1 Pan)</span>
+                <div class="prob-bar-track">
+                  <div id="prob-bar-low" class="prob-bar-fill active" style="width: 100%;"></div>
+                </div>
+                <span id="prob-val-low" class="prob-num">100.0%</span>
+              </div>
+
+              <div class="prob-row">
+                <span class="prob-name">High Effort (Avoid)</span>
+                <div class="prob-bar-track">
+                  <div id="prob-bar-high" class="prob-bar-fill" style="width: 0%;"></div>
+                </div>
+                <span id="prob-val-high" class="prob-num">0.0%</span>
+              </div>
+            </div>
+
+            <div class="telemetry-footer-note">
+              TRAINED ON DATA/SLOTH_MEALS.CSV (130 EXPERIMENTAL OBSERVATIONS)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Navigation to Other Dedicated Pages -->
+    <section class="section-boundary">
+      <div class="section-header-block">
+        <span class="section-idx">DEDICATED MODULES</span>
+        <span class="section-tagline">// DEEP DIVE INTO THE COUCH ARCHITECTURE</span>
+      </div>
+      <div class="recipe-steps-grid">
+        <a href="thesis.html" class="step-card" style="text-decoration: none;">
+          <div class="step-num">01 // THE THESIS</div>
+          <p class="step-body" style="color: var(--ink);">
+            The mathematical defense of couch arbitrage. Why washing dishes is a scam, and how TabPFN cuts cognitive dread by 87.4%.
+          </p>
+          <span class="btn-hairline" style="margin-top: 14px; display: inline-block;">OPEN THESIS →</span>
+        </a>
+
+        <a href="recipes.html" class="step-card" style="text-decoration: none;">
+          <div class="step-num">02 // RECIPE ENGINE</div>
+          <p class="step-body" style="color: var(--ink);">
+            Interactive self-drawing effort curves, Gemma 2 lazy steps, and preset recipes like the 1-Pan Slump and Mug-Drop.
+          </p>
+          <span class="btn-hairline" style="margin-top: 14px; display: inline-block;">OPEN RECIPES →</span>
+        </a>
+
+        <a href="audio.html" class="step-card" style="text-decoration: none;">
+          <div class="step-num">03 // SLEEPY AUDIO</div>
+          <p class="step-body" style="color: var(--ink);">
+            Hands-free audio walkthroughs powered by ElevenLabs turbo streaming with George's slow, deadpan voice.
+          </p>
+          <span class="btn-hairline" style="margin-top: 14px; display: inline-block;">OPEN AUDIO →</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="footer-hairline-strip">
+      <div class="footer-left">
+        SLOTHFIDGE · HACKTOBERFEST WEEK 3: SLOW & STEADY · 2026
+      </div>
+      <div class="footer-right">
+        OPEN STACK: TABPFN 3.5 + GEMMA 2 (GROQ) + ELEVENLABS + FASTAPI
+      </div>
+    </div>
+
+    <!-- Massive Cropped Bottom Wordmark -->
+    <div class="footer-wordmark-wrapper" aria-hidden="true">
+      <div class="footer-wordmark" id="footer-wordmark">
+        <span>S</span><span>L</span><span>O</span><span>T</span><span>H</span><span>F</span><span>R</span><span>I</span><span>D</span><span>G</span><span>E</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

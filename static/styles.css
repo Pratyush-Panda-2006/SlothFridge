@@ -1,0 +1,1377 @@
+/* ==========================================================================
+   SLOTHFIDGE — THE COUCH POTATO CULINARY COPILOT
+   Mid-century maker aesthetic, warm aged-paper ground, carbon ink typography
+   ========================================================================== */
+
+:root {
+  --ground: #EFE9DD;
+  --ground-secondary: #E5DED0;
+  --ink: #141C2B;
+  --ink-secondary: #4A5364;
+  --ink-muted: #767E8C;
+  --accent-blue: #2C4A8F;
+  --hairline: rgba(20, 28, 43, 0.16);
+  --hairline-strong: rgba(20, 28, 43, 0.32);
+
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-mono: "Courier Prime", monospace;
+
+  --nav-height: 64px;
+}
+
+/* Strict Reset & Square Corner Constraint */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important; /* Strict square corners everywhere */
+}
+
+html {
+  background-color: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.85;
+  letter-spacing: 0.08em;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--ground);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Selection */
+::selection {
+  background: var(--ink);
+  color: var(--ground);
+}
+
+/* Headlines & Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.sloth-punchline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-blue); /* Reserved strictly for the lazy phrase */
+}
+
+.sloth-blue-text {
+  color: var(--accent-blue);
+}
+
+/* ==========================================================================
+   1. FIXED NAVIGATION BAR (MATCHING REFERENCE IMAGE)
+   Clean cream background, spaced uppercase links, solid dark rectangular CTA
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: var(--ground-secondary);
+  border-bottom: 1px solid var(--hairline);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-text {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.brand-dot {
+  color: var(--accent-blue);
+  font-family: var(--font-serif);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--ink-secondary);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.15s ease;
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-link:hover {
+  color: var(--ink);
+}
+
+.nav-link.active {
+  color: var(--ink);
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-blue);
+}
+
+/* Far right block button exactly matching uploaded image */
+.nav-cta-btn {
+  background-color: var(--ink);
+  color: var(--ground);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 26px;
+  border: 1px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nav-cta-btn:hover {
+  background-color: transparent;
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   2. HERO SECTION (WITH THE IMPRESSIVE SLOTH FRIDGE HERO)
+   ========================================================================== */
+.hero-section {
+  background-color: var(--ground-secondary);
+  padding-top: 48px;
+  padding-bottom: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--hairline);
+  overflow: hidden;
+}
+
+.hero-main-grid {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 40px 48px 40px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-content {
+  z-index: 10;
+}
+
+.hero-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-secondary);
+  margin-bottom: 20px;
+}
+
+.hero-headline {
+  font-size: clamp(34px, 4.2vw, 60px);
+  line-height: 1.08;
+  margin-bottom: 24px;
+}
+
+.hero-lede {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--ink-secondary);
+  max-width: 580px;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Impressive Sloth Fridge Hero Artwork Card */
+.hero-visual-card {
+  border: 1px solid var(--ink);
+  background: var(--ground);
+  padding: 16px;
+  position: relative;
+}
+
+.hero-image-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: var(--ground-secondary);
+  aspect-ratio: 1 / 1;
+}
+
+.hero-mascot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hero-visual-card:hover .hero-mascot-img {
+  transform: scale(1.02);
+}
+
+.hero-image-caption {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+}
+
+.caption-tag {
+  color: var(--accent-blue);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid var(--ink);
+  padding: 14px 28px;
+  transition: all 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--ink);
+  color: var(--ground);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--ink);
+}
+
+.btn-hairline {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-hairline:hover {
+  color: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Hero Bottom Telemetry Strip */
+.hero-telemetry-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  background: var(--ground-secondary);
+  z-index: 10;
+}
+
+.telemetry-cell {
+  padding: 18px 24px;
+  border-right: 1px solid var(--hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.telemetry-cell:last-child {
+  border-right: none;
+}
+
+.telemetry-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-muted);
+  letter-spacing: 0.12em;
+}
+
+.telemetry-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Massive Spread Wordmark */
+.hero-wordmark-wrapper,
+.footer-wordmark-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 20px;
+  transform: translateY(22%); /* Cropped at baseline */
+  user-select: none;
+}
+
+.hero-wordmark,
+.footer-wordmark {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(64px, 11.5vw, 190px);
+  line-height: 0.8;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  opacity: 0.95;
+}
+
+.hero-wordmark span,
+.footer-wordmark span {
+  display: inline-block;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   GLOBAL SECTION FRAMEWORK & PAGE HEADERS
+   ========================================================================== */
+.page-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px 40px 80px 40px;
+}
+
+.page-header-block {
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 32px;
+  margin-bottom: 48px;
+}
+
+.page-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-blue);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.page-headline {
+  font-size: clamp(32px, 3.8vw, 54px);
+  line-height: 1.12;
+  margin-bottom: 16px;
+}
+
+.page-subhead {
+  font-size: 13px;
+  color: var(--ink-secondary);
+  max-width: 720px;
+  line-height: 1.85;
+}
+
+.section-boundary {
+  border-bottom: 1px solid var(--hairline);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.section-header-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.section-idx {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent-blue);
+}
+
+.section-tagline {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--ink-secondary);
+}
+
+.section-title {
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   SECTION 01 / THESIS PAGE
+   ========================================================================== */
+.thesis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.thesis-col-left {
+  padding-right: 24px;
+  border-right: 1px solid var(--hairline);
+}
+
+.thesis-p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--ink-secondary);
+  margin-bottom: 24px;
+}
+
+.thesis-stat-box {
+  border: 1px solid var(--hairline);
+  padding: 24px;
+  margin-top: 36px;
+  background: var(--ground-secondary);
+}
+
+.stat-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--hairline);
+  font-size: 11px;
+}
+
+.stat-line:last-child {
+  border-bottom: none;
+}
+
+.stat-key {
+  color: var(--ink-muted);
+}
+
+.stat-val {
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.thesis-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.thesis-compare-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.compare-row {
+  border: 1px solid var(--hairline);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--ground-secondary);
+}
+
+.compare-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+}
+
+.compare-subrow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  font-size: 12px;
+}
+
+.compare-bad {
+  color: var(--ink-secondary);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.compare-good {
+  color: var(--ink);
+  font-weight: 700;
+  border-left: 1px solid var(--accent-blue);
+  padding-left: 12px;
+}
+
+/* ==========================================================================
+   SECTION 02 / INGESTION
+   ========================================================================== */
+.ingestion-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.column-heading {
+  font-size: clamp(26px, 2.8vw, 38px);
+  line-height: 1.18;
+  margin-bottom: 16px;
+}
+
+.column-desc {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  margin-bottom: 32px;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.hairline-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink);
+  padding: 12px 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.hairline-input:focus {
+  border-bottom-color: var(--accent-blue);
+}
+
+/* Quick Select Badges */
+.badges-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.badge-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.btn-badge {
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 5px 9px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-badge:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+/* Heat Toggle */
+.toggle-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.btn-toggle {
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  color: var(--ink-secondary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 12px 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.btn-toggle:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.btn-toggle.active {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: rgba(20, 28, 43, 0.06);
+  position: relative;
+}
+
+.btn-toggle.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-blue);
+}
+
+/* Sloth Level Slider / Toggle */
+.sloth-level-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.btn-level {
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  color: var(--ink-secondary);
+  font-family: var(--font-mono);
+  padding: 12px;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.level-num {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.level-txt {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.btn-level:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.btn-level.active {
+  border: 1px solid var(--ink);
+  background: rgba(20, 28, 43, 0.06);
+  color: var(--ink);
+  position: relative;
+}
+
+.btn-level.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-blue);
+}
+
+/* Telemetry Card (Right Column) */
+.telemetry-card {
+  border: 1px solid var(--ink);
+  padding: 28px;
+  background: var(--ground-secondary);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 24px;
+}
+
+.card-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.badge-accent {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent-blue);
+  border: 1px solid var(--accent-blue);
+  padding: 2px 6px;
+}
+
+.metric-block {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.metric-block:last-of-type {
+  border-bottom: none;
+}
+
+.metric-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+  margin-bottom: 6px;
+}
+
+.metric-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.metric-large {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.metric-unit {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.metric-sub {
+  font-size: 10px;
+  color: var(--ink-secondary);
+}
+
+.metric-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.metric-grid-2 .metric-block {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.metric-medium {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.metric-row-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.hairline-progress-bar {
+  width: 100%;
+  height: 6px;
+  border: 1px solid var(--hairline-strong);
+  background: transparent;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--ink);
+  transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Probabilities Matrix */
+.probabilities-block {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--hairline);
+}
+
+.prob-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 50px;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+.prob-name {
+  color: var(--ink-secondary);
+}
+
+.prob-bar-track {
+  height: 4px;
+  background: var(--hairline);
+  position: relative;
+}
+
+.prob-bar-fill {
+  height: 100%;
+  background: var(--ink);
+  transition: width 0.5s ease;
+}
+
+.prob-bar-fill.active {
+  background: var(--accent-blue);
+}
+
+.prob-num {
+  text-align: right;
+  font-weight: 700;
+}
+
+.telemetry-footer-note {
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--hairline);
+  font-size: 9px;
+  color: var(--ink-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================================================
+   SECTION 03 / RECIPE DEMONSTRATION PAGE
+   ========================================================================== */
+.recipe-panel {
+  border: 1px solid var(--ink);
+  background: var(--ground-secondary);
+  padding: 36px;
+}
+
+.variant-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 28px;
+}
+
+.variant-heading {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+}
+
+.btn-variant {
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-variant:hover {
+  border-color: var(--ink);
+}
+
+.btn-variant.active {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--ground);
+}
+
+.recipe-meta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.recipe-kicker {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-blue);
+  margin-bottom: 8px;
+}
+
+.recipe-display-title {
+  font-size: clamp(28px, 3.4vw, 46px);
+  line-height: 1.12;
+  margin-bottom: 10px;
+}
+
+.recipe-tagline {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  max-width: 680px;
+}
+
+/* SVG Effort Chart */
+.svg-demo-wrapper {
+  border: 1px solid var(--hairline);
+  padding: 24px;
+  margin-bottom: 28px;
+  background: var(--ground);
+}
+
+.svg-header-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  color: var(--ink-secondary);
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 8px;
+  height: 2px;
+  background: var(--accent-blue);
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.effort-chart {
+  width: 100%;
+  height: 220px;
+  display: block;
+  overflow: visible;
+}
+
+.chart-grid-line {
+  stroke: var(--hairline);
+  stroke-width: 1;
+}
+
+.axis-line {
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+.chart-axis-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  fill: var(--ink-muted);
+}
+
+.chart-marker-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  fill: var(--accent-blue);
+  letter-spacing: 0.08em;
+}
+
+.chart-dot {
+  fill: var(--ground);
+  stroke: var(--accent-blue);
+  stroke-width: 2;
+}
+
+/* Lazy Rules */
+.lazy-rules-card {
+  border: 1px solid var(--hairline);
+  padding: 20px;
+  margin-bottom: 28px;
+  background: var(--ground);
+}
+
+.card-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-blue);
+  margin-bottom: 12px;
+}
+
+.lazy-rules-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lazy-rules-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.lazy-rules-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent-blue);
+}
+
+/* Recipe Steps */
+.recipe-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.step-card {
+  border: 1px solid var(--hairline);
+  padding: 20px;
+  background: var(--ground);
+}
+
+.step-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent-blue);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.step-body {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   SECTION 04 / SINK DEBT PAGE
+   ========================================================================== */
+.sink-table-container {
+  border: 1px solid var(--ink);
+  overflow-x: auto;
+  background: var(--ground-secondary);
+}
+
+.sloth-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+}
+
+.sloth-table th {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--ink);
+  background: var(--ground);
+}
+
+.sloth-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: top;
+}
+
+.sloth-table tr:last-child td {
+  border-bottom: none;
+}
+
+.td-key {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.td-bad {
+  color: var(--ink-secondary);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.td-good {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.td-delta {
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   SECTION 05 / SLEEPY AUDIO PAGE
+   ========================================================================== */
+.audio-card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  border: 1px solid var(--ink);
+  padding: 40px;
+  background: var(--ground-secondary);
+}
+
+.audio-headline {
+  font-size: clamp(26px, 3.2vw, 42px);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.audio-desc {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  margin-bottom: 28px;
+}
+
+.audio-controls-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.btn-audio {
+  padding: 16px 28px;
+}
+
+.audio-status {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-blue);
+  border: 1px solid var(--accent-blue);
+  padding: 4px 10px;
+}
+
+/* Waveform Simulation */
+.audio-visualizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 28px;
+  padding: 4px 0;
+}
+
+.v-bar {
+  width: 3px;
+  height: 6px;
+  background: var(--ink);
+  transition: height 0.15s ease;
+}
+
+.audio-visualizer.playing .v-bar {
+  animation: waveBar 1.2s infinite ease-in-out alternate;
+}
+
+.audio-visualizer.playing .v-bar:nth-child(2n) { animation-delay: 0.2s; }
+.audio-visualizer.playing .v-bar:nth-child(3n) { animation-delay: 0.4s; }
+.audio-visualizer.playing .v-bar:nth-child(4n) { animation-delay: 0.1s; }
+
+@keyframes waveBar {
+  0% { height: 4px; }
+  100% { height: 26px; }
+}
+
+.transcript-box {
+  border: 1px solid var(--hairline);
+  padding: 24px;
+  background: var(--ground);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.transcript-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent-blue);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.transcript-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--ink);
+  margin-bottom: 20px;
+  border-left: 2px solid var(--accent-blue);
+  padding-left: 16px;
+  font-style: normal;
+}
+
+.transcript-footnote {
+  font-size: 9px;
+  color: var(--ink-muted);
+  letter-spacing: 0.1em;
+  padding-top: 12px;
+  border-top: 1px dashed var(--hairline);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  background: var(--ground);
+  border-top: 1px solid var(--hairline);
+  padding-top: 40px;
+  overflow: hidden;
+}
+
+.footer-hairline-strip {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px 32px 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-main-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .thesis-grid,
+  .ingestion-grid,
+  .audio-card-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .thesis-col-left {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 32px;
+  }
+  .recipe-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 20px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .page-container,
+  .section-boundary {
+    padding: 36px 20px;
+  }
+  .hero-main-grid {
+    padding: 20px 20px 36px 20px;
+  }
+  .hero-telemetry-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+  .telemetry-cell:nth-child(2) {
+    border-right: none;
+  }
+  .recipe-panel,
+  .audio-card-wrapper {
+    padding: 20px;
+  }
+  .footer-hairline-strip {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 20px 24px 20px;
+  }
+}

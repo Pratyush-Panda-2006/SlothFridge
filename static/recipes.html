@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Engine — SlothFridge</title>
+  <meta name="description" content="Gemma 2 Lazy Recipe Engine with self-drawing TabPFN effort curves and zero-prep cooking instructions.">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== NAVBAR (MATCHING REFERENCE IMAGE) ==================== -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-text">SLOTHFIDGE<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">THE COUCH ENGINE</a>
+        <a href="thesis.html" class="nav-link">THE THESIS</a>
+        <a href="recipes.html" class="nav-link active">RECIPE ENGINE</a>
+        <a href="sink-debt.html" class="nav-link">SINK DEBT</a>
+        <a href="audio.html" class="nav-link">SLEEPY AUDIO</a>
+      </nav>
+
+      <a href="index.html#ingestion" class="nav-cta-btn">JOIN THE LINE</a>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <div class="page-header-block">
+      <span class="page-kicker">// SECTION 03: THE SELF-DRAWING RECIPE DEMONSTRATION</span>
+      <h1 class="page-headline">
+        Minimal calories, zero cutting boards, <span class="sloth-punchline">unapologetic speed.</span>
+      </h1>
+      <p class="page-subhead">
+        Gemma 2 synthesizes instructions engineered specifically for someone lying horizontally on a bed. Every recipe is calibrated against TabPFN standing limits and utensil debt constraints.
+      </p>
+    </div>
+
+    <div class="recipe-panel">
+      <!-- Variant Selectors -->
+      <div class="variant-bar" role="tablist" aria-label="Recipe Variants">
+        <span class="variant-heading">SELECT LAZY PRESET:</span>
+        <button type="button" class="btn-variant active" data-variant="slump" role="tab" aria-selected="true">[THE 1-PAN SLUMP]</button>
+        <button type="button" class="btn-variant" data-variant="mugdrop" role="tab" aria-selected="false">[MICROWAVE MUG DROP]</button>
+        <button type="button" class="btn-variant" data-variant="breadcurd" role="tab" aria-selected="false">[BREAD & CURD MELT]</button>
+      </div>
+
+      <!-- Recipe Content Header -->
+      <div class="recipe-meta-header">
+        <div class="meta-left">
+          <span class="recipe-kicker">// GEMMA 2 SYNTHESIZED DISPATCH</span>
+          <h3 id="display-recipe-title" class="recipe-display-title">The 1-Skillet Bread-Egg Slump</h3>
+          <p id="display-recipe-tagline" class="recipe-tagline">
+            Maximum caloric reward for 6.5 minutes of standing and only 2 items to wash.
+          </p>
+        </div>
+        <div class="meta-right">
+          <div class="dock-indicator">
+            <span class="dock-label">[VESSEL: 1 SKILLET]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated SVG Self-Drawing Effort Curve -->
+      <div class="svg-demo-wrapper">
+        <div class="svg-header-row">
+          <span class="svg-label">REAL-TIME EFFORT & HEAT DYNAMICS (TABPFN PATH)</span>
+          <span class="svg-legend"><span class="legend-dot"></span> BLUE HAIRLINE = HUMAN PHYSICAL LOAD</span>
+        </div>
+
+        <svg id="effort-svg" class="effort-chart" viewBox="0 0 900 240" preserveAspectRatio="none">
+          <!-- Grid Hairlines -->
+          <line x1="60" y1="40" x2="860" y2="40" class="chart-grid-line" />
+          <line x1="60" y1="100" x2="860" y2="100" class="chart-grid-line" />
+          <line x1="60" y1="160" x2="860" y2="160" class="chart-grid-line" />
+          <line x1="60" y1="200" x2="860" y2="200" class="chart-grid-line axis-line" />
+
+          <!-- Y Axis Labels -->
+          <text x="50" y="44" class="chart-axis-text" text-anchor="end">100%</text>
+          <text x="50" y="104" class="chart-axis-text" text-anchor="end">50%</text>
+          <text x="50" y="164" class="chart-axis-text" text-anchor="end">20%</text>
+          <text x="50" y="204" class="chart-axis-text" text-anchor="end">0%</text>
+
+          <!-- X Axis Milestones -->
+          <text x="120" y="222" class="chart-marker-text">0.0m: TEAR & DUMP</text>
+          <text x="440" y="222" class="chart-marker-text">2.0m: SOFA RETREAT</text>
+          <text x="760" y="222" class="chart-marker-text">6.5m: PAN SPOONING</text>
+
+          <!-- Self-Drawing Dynamic Effort Curve Path -->
+          <path
+            id="effort-curve-path"
+            d="M 60 170 C 140 60, 200 70, 280 185 C 380 195, 600 195, 700 190 C 760 180, 800 120, 860 195"
+            fill="none"
+            stroke="#2C4A8F"
+            stroke-width="2"
+            stroke-linecap="square"
+          />
+
+          <!-- Milestone Pulse Circles -->
+          <circle cx="280" cy="185" r="4" class="chart-dot" />
+          <circle cx="700" cy="190" r="4" class="chart-dot" />
+        </svg>
+      </div>
+
+      <!-- Strict Lazy Rules -->
+      <div class="lazy-rules-card">
+        <span class="card-label">UNNEGOTIABLE LAZY LAWS:</span>
+        <ul id="display-lazy-rules" class="lazy-rules-list">
+          <li>Tear the bread into random ragged pieces with your fingers.</li>
+          <li>Crack eggs directly into the hot pan over the bread; no whisking bowl permitted.</li>
+          <li>Eat straight out of the skillet using the spatula as a makeshift shovel.</li>
+        </ul>
+      </div>
+
+      <!-- Gemma 2 Recipe Steps -->
+      <div class="recipe-steps-grid">
+        <div class="step-card">
+          <div class="step-num">STEP 01 // ROUGH TEAR</div>
+          <p id="display-step-1" class="step-body">
+            Melt a knob of butter or oil in the pan, then hand-tear 2 eggs, stale bread, curd, cheese slice into uneven chunks right over the heat.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">STEP 02 // LOW HEAT COVER</div>
+          <p id="display-step-2" class="step-body">
+            Crack in the eggs, crumble cheese or curd over top, and stand idle for 6 minutes without overthinking.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">STEP 03 // FORK RETRIEVAL</div>
+          <p id="display-step-3" class="step-body">
+            Slide skillet off the heat onto a coaster in bed, and enjoy zero cleanup.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 32px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--hairline); padding-top: 24px;">
+        <span style="font-size: 11px; color: var(--ink-muted);">HAVE CUSTOM EXPIRED GROCERIES?</span>
+        <a href="index.html#ingestion" class="btn btn-primary">SYNTHESIZE NEW RECIPE →</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="footer-hairline-strip">
+      <div class="footer-left">
+        SLOTHFIDGE · HACKTOBERFEST WEEK 3: SLOW & STEADY · 2026
+      </div>
+      <div class="footer-right">
+        OPEN STACK: TABPFN 3.5 + GEMMA 2 + ELEVENLABS + FASTAPI
+      </div>
+    </div>
+
+    <div class="footer-wordmark-wrapper" aria-hidden="true">
+      <div class="footer-wordmark">
+        <span>S</span><span>L</span><span>O</span><span>T</span><span>H</span><span>F</span><span>R</span><span>I</span><span>D</span><span>G</span><span>E</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
