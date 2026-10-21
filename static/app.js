@@ -1,5 +1,5 @@
 /**
- * SLOTHFIDGE — THE COUCH POTATO CULINARY COPILOT
+ * SLOTHFRIDGE — THE COUCH POTATO CULINARY COPILOT
  * Client-Side Orchestration across multi-page architecture:
  * Ingestion, TabPFN Telemetry, Self-Drawing SVG Effort Paths, Gemma 2 Recipes, and ElevenLabs Audio.
  */
